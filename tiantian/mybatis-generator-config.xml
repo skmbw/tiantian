@@ -8,22 +8,23 @@
 		<property name="javaFileEncoding" value="UTF-8"/>
 		<property name="suppressDate" value="true"/>
 		<property name="trimStrings" value="true"/>
-		<property name="projectPath" value="C:\Users\Administrator\git\ssm\"/>
-		<property name="defaultPackage" value="src/"/>
+		<property name="mainType" value="true"/><!-- 是否使用main方法产生代码 -->
+		<property name="projectPath" value="C:\Users\Administrator\git\tiantian\"/>
+		<property name="defaultPackage" value="src/main/java/"/>
 		<!-- jdbc连接配置 -->
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/skmbw" userId="root" password="3416763" />
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/tiantian" userId="root" password="3416763" />
 		
 		<!-- 实体文件的位置 -->
-		<javaModelGenerator targetPackage="com.vteba.user2.model" targetProject="ssm" /><!-- targetProject之处代码产生在哪个项目中 -->
+		<javaModelGenerator targetPackage="com.vteba.tiantian.user.model" targetProject="tiantian" /><!-- targetProject之处代码产生在哪个项目中 -->
 		
 		<!-- Mapper.xml文件的位置，sql映射文件的位置 -->
-		<sqlMapGenerator targetPackage="com.vteba.user2.mapper" targetProject="ssm" />
+		<sqlMapGenerator targetPackage="com.vteba.tiantian.user.mapper" targetProject="tiantian" />
 		
 		<!-- Mapper.java文件的位置，也就是DAO接口文件位置 -->
-		<javaClientGenerator targetPackage="com.vteba.user2.dao" targetProject="ssm" type="XMLMAPPER" /><!-- ANNOTATEDMAPPER -->
+		<javaClientGenerator targetPackage="com.vteba.tiantian.user.dao" targetProject="tiantian" type="XMLMAPPER" /><!-- ANNOTATEDMAPPER -->
 		
 		<!-- 要映射的表，schema可以不指定 -->
-		<table schema="" tableName="user">
+		<table schema="tiantian" tableName="user">
 			<!-- 如果字段名和属性名不一致，在此处重载。column是DB字段 ，property是Model属性-->
 			<!-- <columnOverride column="user_name" property="name" /> -->
 		</table>

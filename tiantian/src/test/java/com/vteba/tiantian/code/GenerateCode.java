@@ -14,22 +14,21 @@ public class GenerateCode {
 
 	public static void main(String[] args) {
 		Map<String, String> tableListMap = new HashMap<String, String>();
-		tableListMap.put("shards_table", "分区表配置信息");
-		tableListMap.put("table_detail", "分区表明细信息");
+		tableListMap.put("user", "用户信息");
 		
 	    //项目绝对路径
-		String rootPath = "C:\\Users\\Administrator\\git\\ssm\\ssm\\";
-		CodeBuilder builder = new CodeBuilder(rootPath, TempType.Mybatis);
-		builder.setConfigFilePath("src/jndi.properties")
-		.setSrcPath("src/")
-		.schema("skmbw")
+		String rootPath = "C:\\Users\\Administrator\\git\\tiantian\\tiantian\\";
+		CodeBuilder builder = new CodeBuilder(rootPath, TempType.MybatisSimple);
+		builder.setConfigFilePath("src/main/resources/config.properties")
+		.setSrcPath("src/main/java/")
+		.schema("tiantian")
 		//.className("AppInfo")// 可以不设
 		.setDb(DB.MySQL)// 可以不使用，只要jdbc url是正确的
-		.keyType(KeyType.Long)
+		.keyType(KeyType.String)
 		//.tableDesc("应用配置信息")
 		//.tableName("app_info")
 		.setTableList(tableListMap)
-		.module("com.vteba.table")
+		.module("com.vteba.tiantian.user")
 		.setPojo(false)
 		.setMongo(false)
 		.setGenAction(false)

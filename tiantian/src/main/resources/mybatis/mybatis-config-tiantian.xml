@@ -24,7 +24,7 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias alias="User" type="com.vteba.user.model.User"/>
+		<typeAlias alias="User" type="com.vteba.tiantian.user.model.User"/>
 	</typeAliases>
 	
 	<!-- mybatis 自动扫描包下的bean
