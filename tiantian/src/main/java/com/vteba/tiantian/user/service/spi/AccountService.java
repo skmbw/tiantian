@@ -1,107 +1,122 @@
-package com.vteba.tiantian.user.dao;
+package com.vteba.tiantian.user.service.spi;
 
-import com.vteba.tiantian.user.model.User;
-import com.vteba.tiantian.user.model.UserBean;
-import com.vteba.tx.jdbc.mybatis.annotation.DaoMapper;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
+
+import com.vteba.tiantian.user.model.Account;
+import com.vteba.tiantian.user.model.AccountBean;
 
 /**
- * 表user的MyBatis Dao Mapper。
- * 由代码工具自动生成，可以新增方法，但是不要修改自动生成的方法。
- * @date 2015-02-28 14:45:43
+ * 我的账户相关的业务service接口。
+ * @author yinlei
+ * @date 2015-2-28 17:35:22
  */
-@DaoMapper
-public interface UserDao {
+public interface AccountService {
+
     /**
      * 根据params所携带条件进行count计数。
      * @param params 查询条件
+     * @return 统计的记录条数
      */
-    int count(UserBean params);
+    public int count(AccountBean params);
 
     /**
      * 根据params所携带条件进行计数，条件是等于，且是and关系。
      * @param params 查询条件
+     * @return 统计的记录条数
      */
-    int countBy(User params);
+    public int countBy(Account params);
 
     /**
      * 根据params所携带条件删除记录，适用于复杂条件。
      * @param params 查询条件
+     * @return 删除的记录条数
      */
-    int deleteBatch(UserBean params);
+    public int deleteBatch(AccountBean params);
 
     /**
      * 根据params所携带条件删除数据，条件是等于，且是and关系。
      * @param params 删除条件
+     * @return 删除的记录条数
      */
-    int deleteBulks(User params);
+    public int deleteBulks(Account params);
 
     /**
      * 根据主键删除记录。
      * @param id 主键id
+     * @return 删除的记录条数，1或0
      */
-    int deleteById(String id);
+    public int deleteById(String id);
 
     /**
      * 插入记录，只有非空字段才会插入到数据库。
      * @param record 要被保存的数据
+     * @return 保存成功的记录条数，1或0
      */
-    int save(User record);
+    public int save(Account record);
 
     /**
      * 根据params所携带条件查询数据，适用于复杂查询。
      * @param params 查询条件
+     * @return 我的账户实体list
      */
-    List<User> queryForList(UserBean params);
+    public List<Account> queryForList(AccountBean params);
 
     /**
      * 根据params所携带条件查询数据，条件是等于，且是and关系。
      * @param params 查询条件
+     * @return 我的账户实体list
      */
-    List<User> queryList(User params);
+    public List<Account> queryList(Account params);
 
     /**
      * 根据params所携带条件分页查询数据，适用于复杂查询。
      * @param params 查询条件
+     * @return 我的账户实体list
      */
-    List<User> pagedForList(UserBean params);
+    public List<Account> pagedForList(AccountBean params);
 
     /**
      * 根据params所携带条件分页查询数据，条件是等于，且是and关系。
      * @param params 查询条件
+     * @return 我的账户实体list
      */
-    List<User> pagedList(User params);
+    public List<Account> pagedList(Account params);
 
     /**
      * 根据主键查询数据。
      * @param id 主键
+     * @return 我的账户实体
      */
-    User get(String id);
-
+    public Account get(String id);
+    
     /**
      * 根据params所携带条件查询唯一记录，条件是等于，且是and关系。
      * @param params 查询条件
+     * @return 我的账户实体
      */
-    User unique(User params);
+    public Account unique(Account params);
 
     /**
      * 根据params所携带条件更新指定字段，适用于复杂条件。
      * @param record 要更新的数据
      * @param params update的where条件
+     * @return 更新记录条数
      */
-    int updateBatch(@Param("record") User record, @Param("params") UserBean params);
+    public int updateBatch(Account record, AccountBean params);
 
     /**
      * 根据params所携带条件更新指定字段，条件是等于，且是and关系。
      * @param record 要更新的数据
      * @param params update的where条件
+     * @return 更新记录条数
      */
-    int updateBulks(@Param("record") User record, @Param("params") User params);
+    public int updateBulks(Account record, Account params);
 
     /**
      * 根据主键更新指定字段的数据。
      * @param record 要更新的数据，含有Id
+     * @return 更新记录条数
      */
-    int updateById(User record);
+    public int updateById(Account record);
+
 }
