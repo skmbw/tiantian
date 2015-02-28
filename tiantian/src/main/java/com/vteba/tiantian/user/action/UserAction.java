@@ -1,5 +1,6 @@
 package com.vteba.tiantian.user.action;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -14,6 +15,7 @@ import com.vteba.tiantian.consts.KeyValue;
 import com.vteba.tiantian.user.model.User;
 import com.vteba.tiantian.user.service.spi.CookieService;
 import com.vteba.tiantian.user.service.spi.UserService;
+import com.vteba.utils.id.ObjectId;
 import com.vteba.web.action.GenericAction;
 import com.vteba.web.action.JsonBean;
 
@@ -50,7 +52,6 @@ public class UserAction extends GenericAction<User> {
      * @param model 要新增的数据
      * @return 新增页面逻辑视图
      */
-    @ResponseBody
     @RequestMapping("/doLogin")
 	public String doLogin(User user) {
 		// 检查当前是否有登录用户
@@ -77,11 +78,13 @@ public class UserAction extends GenericAction<User> {
      */
     private String checkUserLogin(User user) {
 		// 不成功，查询数据库，获取用户信息
-		User aUser = userServiceImpl.unique(user);
+    	User query = new User();
+    	query.setUserAccount(user.getUserAccount());
+		query = userServiceImpl.unique(query);
 		// 和用户填写的登录信息进行比较
-		if (aUser != null && passEqual(aUser.getPassword(), user.getPassword())) {
+		if (query != null && passEqual(query.getPassword(), user.getPassword())) {
 			// 如果成功，将信息保存到cookie中，跳转
-			cookieServiceImpl.addUserToCookie(aUser);
+			cookieServiceImpl.addUserToCookie(query);
 			return "home/index";
 		} else {
 			// 不成功，返回登录页面，显示错误
@@ -98,6 +101,37 @@ public class UserAction extends GenericAction<User> {
     private boolean passEqual(String encodePass, String rawPass) {
     	boolean passEqual = shaPasswordEncoder.isPasswordValid(encodePass, rawPass, KeyValue.PASS_SALT);
     	return passEqual;
+    }
+    
+    /**
+     * 跳转到用户注册页面
+     * @return
+     */
+    @RequestMapping("/register")
+    public String register() {
+    	return "user/register";
+    }
+    
+    /**
+     * 执行注册的业务逻辑。
+     * @param regUser 代注册的用户信息
+     * @return 
+     */
+    @RequestMapping("doRegister")
+    public String doRegister(User regUser, Map<String, Object> maps) {
+    	// 对密码进行sha，不保存原始密码
+    	String password = shaPasswordEncoder.encodePassword(regUser.getPassword(), KeyValue.PASS_SALT);
+    	regUser.setPassword(password);
+    	regUser.setCreateDate(new Date());
+    	regUser.setId(ObjectId.get().toString());
+    	
+    	int result = userServiceImpl.save(regUser);
+    	if (result == 1) {
+    		return "home/index";
+    	} else {
+    		maps.put(MSG, "账号注册失败。");
+    		return "user/register";
+    	}
     }
     
     /**

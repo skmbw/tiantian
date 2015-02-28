@@ -59,9 +59,9 @@
     <div class="main">
       <div class="container">
         <ul class="breadcrumb">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index">首页</a></li>
             <li><a href="">Store</a></li>
-            <li class="active">Login</li>
+            <li class="active">登录</li>
         </ul>
         <!-- BEGIN SIDEBAR & CONTENT -->
         <div class="row margin-bottom-40">
@@ -85,7 +85,7 @@
             <div class="content-form-page">
               <div class="row">
                 <div class="col-md-7 col-sm-7">
-                  <form class="form-horizontal form-without-legend" role="form">
+                  <form class="form-horizontal form-without-legend" action="user/doLogin" method="post" role="form">
                     <div class="form-group">
                       <label for="email" class="col-lg-4 control-label">账号 <span class="require">*</span></label>
                       <div class="col-lg-8">
@@ -95,7 +95,7 @@
                     <div class="form-group">
                       <label for="password" class="col-lg-4 control-label">密码 <span class="require">*</span></label>
                       <div class="col-lg-8">
-                        <input type="text" class="form-control" name="password" id="password">
+                        <input type="password" class="form-control" name="password" id="password">
                       </div>
                     </div>
                     <div class="row">
