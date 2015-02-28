@@ -73,6 +73,11 @@ public class User {
     private Boolean state;
 
     /**
+     * 对应数据库表字段 user.email
+     */
+    private String email;
+
+    /**
      * 设置 order by 排序语句
      */
     public void setOrderBy(String orderBy) {
@@ -288,5 +293,23 @@ public class User {
      */
     public void setState(Boolean state) {
         this.state = state;
+    }
+
+    /**
+     * 获得字段 user.email 的值
+     *
+     * @return the value of user.email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * 设置字段 user.email 的值
+     *
+     * @param email the value for user.email
+     */
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

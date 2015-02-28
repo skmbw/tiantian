@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Param;
 /**
  * 分区表user的MyBatis Dao Mapper。
  * 由代码工具自动生成，可以新增方法，但是不要修改自动生成的方法。
- * @date 2015-02-28 12:32:40
+ * @date 2015-02-28 14:45:43
  */
 @DaoMapper
 public interface UserDao {

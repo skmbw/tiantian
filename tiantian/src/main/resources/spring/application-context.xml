@@ -146,5 +146,9 @@
 		<aop:advisor advice-ref="transactionAdvice" pointcut-ref="financeTxMethodPointCut"/>
 		<aop:advisor advice-ref="transactionAdvice" pointcut-ref="remoteTxMethodPointCut"/>
 	</aop:config>
+	
+	<bean id="shaPasswordEncoder" class="org.springframework.security.authentication.encoding.ShaPasswordEncoder">
+		<constructor-arg value="256"/><!--1,256,384,512-->
+	</bean>
 
 </beans>

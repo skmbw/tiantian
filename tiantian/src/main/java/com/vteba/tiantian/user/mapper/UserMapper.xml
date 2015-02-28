@@ -15,6 +15,7 @@
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
     <result column="state" property="state" jdbcType="BIT" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     <!--
@@ -22,7 +23,7 @@
       MyBatis代码工具自动生成，不要修改！
     -->
     id, user_name, user_account, telephone, mobile_phone, company, password, create_date, 
-    state
+    state, email
   </sql>
   <sql id="Example_Where_Clause" >
     <!--
@@ -127,6 +128,9 @@
         <if test="state != null" >
           and state = #{state,jdbcType=BIT}
         </if>
+        <if test="email != null" >
+          and email = #{email,jdbcType=VARCHAR}
+        </if>
       </trim>
     </where>
     <if test="orderBy != null" >
@@ -166,6 +170,9 @@
         </if>
         <if test="params.state != null" >
           and state = #{params.state,jdbcType=BIT}
+        </if>
+        <if test="params.email != null" >
+          and email = #{params.email,jdbcType=VARCHAR}
         </if>
       </trim>
     </where>
@@ -317,6 +324,9 @@
       <if test="state != null" >
         state,
       </if>
+      <if test="email != null" >
+        email,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -345,6 +355,9 @@
       </if>
       <if test="state != null" >
         #{state,jdbcType=BIT},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -402,6 +415,9 @@
       <if test="record.state != null" >
         state = #{record.state,jdbcType=BIT},
       </if>
+      <if test="record.email != null" >
+        email = #{record.email,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -441,6 +457,9 @@
       <if test="record.state != null" >
         state = #{record.state,jdbcType=BIT},
       </if>
+      <if test="record.email != null" >
+        email = #{record.email,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="update_model_where_clause" />
@@ -476,6 +495,9 @@
       </if>
       <if test="state != null" >
         state = #{state,jdbcType=BIT},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}
