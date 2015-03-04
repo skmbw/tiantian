@@ -18,7 +18,8 @@
 		<property name="mapperLocations">
 			<list>
 				<value>classpath:/com/vteba/tiantian/user/mapper/*Mapper.xml</value>
-				<value>classpath:/com/vteba/tiantian/user3/mapper/*Mapper.xml</value>
+				<value>classpath:/com/vteba/tiantian/order/mapper/*Mapper.xml</value>
+				<value>classpath:/com/vteba/tiantian/item/mapper/*Mapper.xml</value>
 			</list>
 		</property>
 <!-- 		<property name="plugins"> -->
@@ -31,8 +32,8 @@
 	<!-- 注册Mapper方式二：也可不指定特定mapper，而使用自动扫描包的方式来注册各种Mapper ，配置如下-->
 	<bean id="tiantianMapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<!-- 如果只指定了basePackage属性，扫描全部借口 -->
-		<property name="basePackage" value="com.vteba.tiantian.user,com.vteba.common" />
-		<property name="markerInterface" value="com.vteba.tx.jdbc.mybatis.mapper.BaseMapper"/><!-- 扫描该接口的子接口 -->
+		<property name="basePackage" value="com.vteba.tiantian,com.vteba.common" />
+		<!--<property name="markerInterface" value="com.vteba.tx.jdbc.mybatis.mapper.BaseMapper"/> 扫描该接口的子接口 -->
 		<property name="annotationClass" value="com.vteba.tx.jdbc.mybatis.annotation.DaoMapper"/><!-- 扫描被该注解标注的接口 -->
 		<property name="sqlSessionFactoryBeanName" value="tiantianSqlSessionFactory"/><!-- 如果使用sqlSessionFactory，多数据源将出现无法装配bean的问题 -->
 	</bean>

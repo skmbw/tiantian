@@ -25,6 +25,13 @@
 	
 	<typeAliases>
 		<typeAlias alias="User" type="com.vteba.tiantian.user.model.User"/>
+		<typeAlias alias="Account" type="com.vteba.tiantian.user.model.Account"/>
+		<typeAlias alias="Address" type="com.vteba.tiantian.user.model.Address"/>
+		<typeAlias alias="Delivery" type="com.vteba.tiantian.order.model.Delivery"/>
+		<typeAlias alias="Order" type="com.vteba.tiantian.order.model.Order"/>
+		<typeAlias alias="OrderDetail" type="com.vteba.tiantian.order.model.OrderDetail"/>
+		<typeAlias alias="ShoppingCart" type="com.vteba.tiantian.order.model.ShoppingCart"/>
+		<typeAlias alias="Item" type="com.vteba.tiantian.item.model.Item"/>
 	</typeAliases>
 	
 	<!-- mybatis 自动扫描包下的bean

@@ -1,6 +1,7 @@
 package com.vteba.tiantian.user.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class AccountBean {
@@ -446,6 +447,316 @@ public class AccountBean {
 
         public Criteria andSpendNotBetween(Double value1, Double value2) {
             addCriterion("spend not between", value1, value2, "spend");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateIsNull() {
+            addCriterion("state is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateIsNotNull() {
+            addCriterion("state is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateEqualTo(Integer value) {
+            addCriterion("state =", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateNotEqualTo(Integer value) {
+            addCriterion("state <>", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateGreaterThan(Integer value) {
+            addCriterion("state >", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateGreaterThanOrEqualTo(Integer value) {
+            addCriterion("state >=", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateLessThan(Integer value) {
+            addCriterion("state <", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateLessThanOrEqualTo(Integer value) {
+            addCriterion("state <=", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateIn(List<Integer> values) {
+            addCriterion("state in", values, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateNotIn(List<Integer> values) {
+            addCriterion("state not in", values, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateBetween(Integer value1, Integer value2) {
+            addCriterion("state between", value1, value2, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateNotBetween(Integer value1, Integer value2) {
+            addCriterion("state not between", value1, value2, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andFreezeIsNull() {
+            addCriterion("freeze is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFreezeIsNotNull() {
+            addCriterion("freeze is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFreezeEqualTo(Double value) {
+            addCriterion("freeze =", value, "freeze");
+            return (Criteria) this;
+        }
+
+        public Criteria andFreezeNotEqualTo(Double value) {
+            addCriterion("freeze <>", value, "freeze");
+            return (Criteria) this;
+        }
+
+        public Criteria andFreezeGreaterThan(Double value) {
+            addCriterion("freeze >", value, "freeze");
+            return (Criteria) this;
+        }
+
+        public Criteria andFreezeGreaterThanOrEqualTo(Double value) {
+            addCriterion("freeze >=", value, "freeze");
+            return (Criteria) this;
+        }
+
+        public Criteria andFreezeLessThan(Double value) {
+            addCriterion("freeze <", value, "freeze");
+            return (Criteria) this;
+        }
+
+        public Criteria andFreezeLessThanOrEqualTo(Double value) {
+            addCriterion("freeze <=", value, "freeze");
+            return (Criteria) this;
+        }
+
+        public Criteria andFreezeIn(List<Double> values) {
+            addCriterion("freeze in", values, "freeze");
+            return (Criteria) this;
+        }
+
+        public Criteria andFreezeNotIn(List<Double> values) {
+            addCriterion("freeze not in", values, "freeze");
+            return (Criteria) this;
+        }
+
+        public Criteria andFreezeBetween(Double value1, Double value2) {
+            addCriterion("freeze between", value1, value2, "freeze");
+            return (Criteria) this;
+        }
+
+        public Criteria andFreezeNotBetween(Double value1, Double value2) {
+            addCriterion("freeze not between", value1, value2, "freeze");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreIsNull() {
+            addCriterion("score is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreIsNotNull() {
+            addCriterion("score is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreEqualTo(Double value) {
+            addCriterion("score =", value, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreNotEqualTo(Double value) {
+            addCriterion("score <>", value, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreGreaterThan(Double value) {
+            addCriterion("score >", value, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreGreaterThanOrEqualTo(Double value) {
+            addCriterion("score >=", value, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreLessThan(Double value) {
+            addCriterion("score <", value, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreLessThanOrEqualTo(Double value) {
+            addCriterion("score <=", value, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreIn(List<Double> values) {
+            addCriterion("score in", values, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreNotIn(List<Double> values) {
+            addCriterion("score not in", values, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreBetween(Double value1, Double value2) {
+            addCriterion("score between", value1, value2, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreNotBetween(Double value1, Double value2) {
+            addCriterion("score not between", value1, value2, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordIsNull() {
+            addCriterion("pay_password is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordIsNotNull() {
+            addCriterion("pay_password is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordEqualTo(String value) {
+            addCriterion("pay_password =", value, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordNotEqualTo(String value) {
+            addCriterion("pay_password <>", value, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordGreaterThan(String value) {
+            addCriterion("pay_password >", value, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordGreaterThanOrEqualTo(String value) {
+            addCriterion("pay_password >=", value, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordLessThan(String value) {
+            addCriterion("pay_password <", value, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordLessThanOrEqualTo(String value) {
+            addCriterion("pay_password <=", value, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordLike(String value) {
+            addCriterion("pay_password like", value, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordNotLike(String value) {
+            addCriterion("pay_password not like", value, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordIn(List<String> values) {
+            addCriterion("pay_password in", values, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordNotIn(List<String> values) {
+            addCriterion("pay_password not in", values, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordBetween(String value1, String value2) {
+            addCriterion("pay_password between", value1, value2, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordNotBetween(String value1, String value2) {
+            addCriterion("pay_password not between", value1, value2, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnableDateIsNull() {
+            addCriterion("enable_date is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnableDateIsNotNull() {
+            addCriterion("enable_date is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnableDateEqualTo(Date value) {
+            addCriterion("enable_date =", value, "enableDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnableDateNotEqualTo(Date value) {
+            addCriterion("enable_date <>", value, "enableDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnableDateGreaterThan(Date value) {
+            addCriterion("enable_date >", value, "enableDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnableDateGreaterThanOrEqualTo(Date value) {
+            addCriterion("enable_date >=", value, "enableDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnableDateLessThan(Date value) {
+            addCriterion("enable_date <", value, "enableDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnableDateLessThanOrEqualTo(Date value) {
+            addCriterion("enable_date <=", value, "enableDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnableDateIn(List<Date> values) {
+            addCriterion("enable_date in", values, "enableDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnableDateNotIn(List<Date> values) {
+            addCriterion("enable_date not in", values, "enableDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnableDateBetween(Date value1, Date value2) {
+            addCriterion("enable_date between", value1, value2, "enableDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnableDateNotBetween(Date value1, Date value2) {
+            addCriterion("enable_date not between", value1, value2, "enableDate");
             return (Criteria) this;
         }
     }

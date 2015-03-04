@@ -1,5 +1,7 @@
 package com.vteba.tiantian.user.model;
 
+import java.util.Date;
+
 public class Account {
     /**
      * order by 排序语句
@@ -44,6 +46,31 @@ public class Account {
      * 对应数据库表字段 account.spend
      */
     private Double spend;
+
+    /**
+     * 对应数据库表字段 account.state
+     */
+    private Integer state;
+
+    /**
+     * 对应数据库表字段 account.freeze
+     */
+    private Double freeze;
+
+    /**
+     * 对应数据库表字段 account.score
+     */
+    private Double score;
+
+    /**
+     * 对应数据库表字段 account.pay_password
+     */
+    private String payPassword;
+
+    /**
+     * 对应数据库表字段 account.enable_date
+     */
+    private Date enableDate;
 
     /**
      * 设置 order by 排序语句
@@ -171,5 +198,95 @@ public class Account {
      */
     public void setSpend(Double spend) {
         this.spend = spend;
+    }
+
+    /**
+     * 获得字段 account.state 的值
+     *
+     * @return the value of account.state
+     */
+    public Integer getState() {
+        return state;
+    }
+
+    /**
+     * 设置字段 account.state 的值
+     *
+     * @param state the value for account.state
+     */
+    public void setState(Integer state) {
+        this.state = state;
+    }
+
+    /**
+     * 获得字段 account.freeze 的值
+     *
+     * @return the value of account.freeze
+     */
+    public Double getFreeze() {
+        return freeze;
+    }
+
+    /**
+     * 设置字段 account.freeze 的值
+     *
+     * @param freeze the value for account.freeze
+     */
+    public void setFreeze(Double freeze) {
+        this.freeze = freeze;
+    }
+
+    /**
+     * 获得字段 account.score 的值
+     *
+     * @return the value of account.score
+     */
+    public Double getScore() {
+        return score;
+    }
+
+    /**
+     * 设置字段 account.score 的值
+     *
+     * @param score the value for account.score
+     */
+    public void setScore(Double score) {
+        this.score = score;
+    }
+
+    /**
+     * 获得字段 account.pay_password 的值
+     *
+     * @return the value of account.pay_password
+     */
+    public String getPayPassword() {
+        return payPassword;
+    }
+
+    /**
+     * 设置字段 account.pay_password 的值
+     *
+     * @param payPassword the value for account.pay_password
+     */
+    public void setPayPassword(String payPassword) {
+        this.payPassword = payPassword;
+    }
+
+    /**
+     * 获得字段 account.enable_date 的值
+     *
+     * @return the value of account.enable_date
+     */
+    public Date getEnableDate() {
+        return enableDate;
+    }
+
+    /**
+     * 设置字段 account.enable_date 的值
+     *
+     * @param enableDate the value for account.enable_date
+     */
+    public void setEnableDate(Date enableDate) {
+        this.enableDate = enableDate;
     }
 }
